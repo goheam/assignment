@@ -85,8 +85,9 @@
 + -l 옵션은 state 필드 앞에 프로세스 ID를 출력한다.
 ![image](https://github.com/goheam/assignment/assets/133829880/937a570c-e4b5-4328-b990-09307e5bf4d4)
 ---
-+ `$ jobs [옵션] [jobID...]`
-+ `$ jobs -x command [args]`
+**`$ jobs [옵션] [jobID...]`**
+
+**`$ jobs -x command [args]`**
 + -l : 프로세스 그룹 ID를 state 필드 앞에 출력한다.
 + -n : 프로세스 그룹 중에 대표 프로세스 ID를 출력한다.
 + -p : 각 프로세스 ID에 대해 한 행씩 출력한다.
@@ -108,4 +109,43 @@
  + v로 시작하는 모든 프로세스 ID를 확인할 수 있다.
 
 # kill
++ 요약 - 프로세스를 종료한다.
++ 경로 - /bin/kill
++ kill 명령어는 프로세스에 종료 시그널을 보낸다. 
++ 시스템에 얘기치 않은 문제가 생긴 프로세스를 종료시킬 수 있다. 
++ 만약 kill 명령으로 종료되지 않는 프로세스는 -9 옵션을 사용해서 강제로 종료하면 된다.
++ 아래와 같이 ps 명령어로 sshd 프로세스를 확인할 수 있다.
+![image](https://github.com/goheam/assignment/assets/133829880/d80dba04-44b7-47f6-8a2f-35c886b63d21)
 ---
+**`$kill [-s시그널][-a]pid...`**
+
+**`$kill -l [시그널]`**
++ pid ··· : 종료시킬 프로세스 ID나 프로세스 이름을 지정한다.
++ -s : 전달할 시그널의 종류를 지정한다. 여기에는 시그널 이름이나 번호를 써준다.
++ -l : 시그널로 사용할 수 있는 시그널 이름들을 보여준다. 이것은 /usr/include/linux/signal.h 파일에서도 알 수 있다.
++ -1, : -HUP 프로세스를 재활성화한다.
++ -9 : 프로세스를 강제로 종료시킨다.
+---
+| Root | USER | 프로세스의 사용자 |
+| ------ |:------:| -------:|
+| 2518 | PID | 프로세스 ID
+| 0.0 | %CPU | 마지막 1분 동안 프로세스가 사용한 CPU 점유율
+| 0.1 | %MEM | 마지막 1분 동안 프로세스가 사용한 메모리의 점유율
+| 7084 | VSZ | 가상메모리에 있는 프로세스의 KB 단위 크기
+| 1076 | RSS | 프로세스의 실제 메모리의 크기로 KB 단위
+| ? | TTY | 연결되어 있는 터미널
+| Ss | STAT | 실행되고 있는 프로세스 상태
+| Jun07 | START | 프로세스가 시작된 날짜
+| 0:00 | TIME | 프로세스가 소비한 총 시간
+| /usr/sbin/sshd | COMMAND | 사용자가 실행한 명령 이름
+
+![image](https://github.com/goheam/assignment/assets/133829880/fd3f361e-0c37-42b3-a016-8c208433308c)
++ ps 명령으로 확인한 PID를 이용하면 원하는 프로세스를 종료시킬 수 있다.
+
+![image](https://github.com/goheam/assignment/assets/133829880/0432bb2f-b23a-4f38-9495-64f566234ad9)
++ kill 명령으로 종료되지 않으면 -9 옵션으로 강제 종료하자.
+
+![image](https://github.com/goheam/assignment/assets/133829880/5d7b1443-a902-4a4e-af32-883560cfcc3f)
++ kill -HUP pid 명령을 이용하면 프로세스를 종료 후 다시 재실행한다.
+
+*만일 kill -9 1 명령을 수행한다면 시스템이 다운될 것이다. PID 1은 init을 의미한다. 그러므로 이는 사용하지 말자.*
