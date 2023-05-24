@@ -1,5 +1,6 @@
 # top
 + 요약 - 시스템 프로세스/메모리 사용 현황을 실시간으로 출력한다.
++ 경로 - /usr/bin/top
 + top 명령어는 시스템의 프로세스/메모리 사용 상태를 5초의 간격으로 업데이트하여 출력한다. 
 + 화면에 출력되는 기본값은 현재시간, 시스템 업데이트(1) 시간, 시스템에 로그인한 사용자 수, 지난 1분, 지난 5분, 지난 15분간의 시스템 평균 부하를 출력한다.
 +  top 명령어를 실행한 후 초기 화면에서  키를 입력하면 사용할 수 있는 단축키 목록을 확인할 수 있다.
@@ -54,6 +55,29 @@
 `$ ps -ef | more` : 모든 프로세스를 풀 포맷으로 출력, more 명령어를 이용하여 페이지 단위로 출력
 
 `$ ps -ef | grep seek` : 모든 프로세스를 풀 포맷으로 출력한 목록에서 grep을 이용해 seek이 포함된 행(Row)을 출력
+
+----
++ u 옵션은 사용자의 프로세스를, -l 옵션은 자세한 정보를 출력한다.
+![ka38_241_i2](https://github.com/goheam/assignment/assets/133829880/eab54e46-c31e-4ced-a94b-0c81799fad32)
+
++ 시스템의 모든 프로세스를 확인할 경우 aux 옵션을 사용한다.
+![image](https://github.com/goheam/assignment/assets/133829880/56d16835-1d57-4c41-9feb-e7bd473c69ba)
+
++ 자주 사용하는 ps 옵션의 조합이다. 표준 문장으로 시스템의 모든 프로세스를 출력한다.
+![image](https://github.com/goheam/assignment/assets/133829880/4ec40b99-f295-472a-97be-27497eff383f)
+
++ BSD 문장으로 시스템의 모든 프로세스를 출력한다.
+![image](https://github.com/goheam/assignment/assets/133829880/fed823af-9a9f-4cf1-b84d-4831f059489e)
+
++ 프로세스 트리를 출력할 수 있다.
+![image](https://github.com/goheam/assignment/assets/133829880/468e96f9-c8a1-45ef-9216-f101747f63be)
+
+
+
+
+
+
+
 
 # jobs
 
