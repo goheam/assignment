@@ -32,6 +32,7 @@
 + ps 명령어는 프로세스의 현재 상태를 출력한다. 
 + ps로 현재 사용하는 프로세스의 상태를 살펴보자
 + PID, TTY, TIME, CMD 헤더의 필드와 내용을 출력한다.
+
 ![ka38_241_i1](https://github.com/goheam/assignment/assets/133829880/de2069b6-c6ec-4200-8cd0-954756df88e2)
 ---
 **` $ps [옵션] `**
@@ -59,18 +60,23 @@
 
 ----
 + u 옵션은 사용자의 프로세스를, -l 옵션은 자세한 정보를 출력한다.
+
 ![ka38_241_i2](https://github.com/goheam/assignment/assets/133829880/eab54e46-c31e-4ced-a94b-0c81799fad32)
 
 + 시스템의 모든 프로세스를 확인할 경우 aux 옵션을 사용한다.
+
 ![image](https://github.com/goheam/assignment/assets/133829880/56d16835-1d57-4c41-9feb-e7bd473c69ba)
 
 + 자주 사용하는 ps 옵션의 조합이다. 표준 문장으로 시스템의 모든 프로세스를 출력한다.
+
 ![image](https://github.com/goheam/assignment/assets/133829880/4ec40b99-f295-472a-97be-27497eff383f)
 
 + BSD 문장으로 시스템의 모든 프로세스를 출력한다.
+
 ![image](https://github.com/goheam/assignment/assets/133829880/fed823af-9a9f-4cf1-b84d-4831f059489e)
 
 + 프로세스 트리를 출력할 수 있다.
+
 ![image](https://github.com/goheam/assignment/assets/133829880/468e96f9-c8a1-45ef-9216-f101747f63be)
 
 
@@ -80,9 +86,11 @@
 + jobs는 작업이 중지된 상태, 백그라운드로 진행 중인 작업 상태, 변경되었지만 보고되지 않은 상태 등을 표시한다.
 + jobs 명령어는 현재 쉘 프로세스의 자식 백그라우드 프로세스들을 보여준다고 생각하면 된다.
 + 현재 환경의 작업 상태를 아래와 같이 확인할 수 있다.
+
 ![image](https://github.com/goheam/assignment/assets/133829880/7c81c7d3-3c1e-4f30-a1b5-1680d60acf9c)
 
 + -l 옵션은 state 필드 앞에 프로세스 ID를 출력한다.
+
 ![image](https://github.com/goheam/assignment/assets/133829880/937a570c-e4b5-4328-b990-09307e5bf4d4)
 ---
 **`$ jobs [옵션] [jobID...]`**
@@ -115,6 +123,7 @@
 + 시스템에 얘기치 않은 문제가 생긴 프로세스를 종료시킬 수 있다. 
 + 만약 kill 명령으로 종료되지 않는 프로세스는 -9 옵션을 사용해서 강제로 종료하면 된다.
 + 아래와 같이 ps 명령어로 sshd 프로세스를 확인할 수 있다.
+
 ![image](https://github.com/goheam/assignment/assets/133829880/d80dba04-44b7-47f6-8a2f-35c886b63d21)
 ---
 **`$kill [-s시그널][-a]pid...`**
