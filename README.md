@@ -14,7 +14,7 @@
 3. -n num : 지정한 시간(num)만큼 업데이트 정보를 출력한다.
 4. -q : 시간의 간격 없이 계속하여 업데이트 정보를 출력한다.
 ---
-> top 실행 후 명령어
+**top 실행 후 명령어**
 + shift + p : CPU 사용률 내림차순
 + shift + m : 메모리 사용률 내림차순
 + shift + t : 프로세스가 돌아가고 있는 시간 순
@@ -35,7 +35,7 @@
 ![ka38_241_i1](https://github.com/goheam/assignment/assets/133829880/de2069b6-c6ec-4200-8cd0-954756df88e2)
 ---
 + ` $ps [옵션] `
-> 전체 프로세스와 관련된 옵션
+**전체 프로세스와 관련된 옵션**
 + -A : 모든 프로세스를 출력한다.
 + -N : -A 옵션과 비슷하나 ps 프로세스를 제외하고 출력한다.
 + -a : 세션 리더 및 터미널에 속하지 않는 프로세스를 제외하고 출력한다.
@@ -73,13 +73,38 @@
 ![image](https://github.com/goheam/assignment/assets/133829880/468e96f9-c8a1-45ef-9216-f101747f63be)
 
 
-
-
-
-
-
-
 # jobs
++ 요약 - 현재 세션의 작업 상태를 출력한다.
++ 경로 - 내부 명령어
++ jobs는 작업이 중지된 상태, 백그라운드로 진행 중인 작업 상태, 변경되었지만 보고되지 않은 상태 등을 표시한다.
++ jobs 명령어는 현재 쉘 프로세스의 자식 백그라우드 프로세스들을 보여준다고 생각하면 된다.
++ 현재 환경의 작업 상태를 아래와 같이 확인할 수 있다.
+![image](https://github.com/goheam/assignment/assets/133829880/7c81c7d3-3c1e-4f30-a1b5-1680d60acf9c)
 
++ -l 옵션은 state 필드 앞에 프로세스 ID를 출력한다.
+![image](https://github.com/goheam/assignment/assets/133829880/937a570c-e4b5-4328-b990-09307e5bf4d4)
+---
++ `$ jobs [옵션] [jobID...]`
++ `$ jobs -x command [args]`
++ -l : 프로세스 그룹 ID를 state 필드 앞에 출력한다.
++ -n : 프로세스 그룹 중에 대표 프로세스 ID를 출력한다.
++ -p : 각 프로세스 ID에 대해 한 행씩 출력한다.
++ command : 지정한 명령어를 실행한다.
+---
+**jobs로 출력되는 백그라운드 작업의 상태값**
+ | Situation | Explanation |.
+ | -------- | -------- | ------- |
+ | Running | 작업이 일시 중단되지 않았고 종료하지 않고 계속 진행 중임을 뜻한다.  |.
+ | Done | 작업이 완료되어 0을 반환하고 종료했음을 뜻한다.                        |.
+ | Done (code) | 작업이 정상적으로 완료했으며, 0이 아닌 코드를 반환했음을 뜻한다.|.
+ | Stopped | 작업이 일시 중단됨을 뜻한다.                                       |.
+ | Stopped (SIGTSTP) | SIGTSTP 신호가 작업을 일시 중단했음을 뜻한다.            |.
+ | Stopped (SIGSTOP) | SIGSTOP 신호가 일시 중단했음을 뜻한다.                   |.
+ | Stopped (SIGTTIN) | SIGTTIN 신호가 작업을 일시 중단했음을 뜻한다.            |.
+ | Stopped (SIGTTOU) | SIGTTOU 신호가 작업을 일시 중단했음을 뜻한다.            |.
+ ---
+![image](https://github.com/goheam/assignment/assets/133829880/9bcba09f-0b4e-4275-8365-4d04ec26bd01)
+ + v로 시작하는 모든 프로세스 ID를 확인할 수 있다.
 
 # kill
+---
